@@ -37,8 +37,8 @@ static Handle_V3d_Viewer createOccViewer()
 #if (!defined(Q_OS_WIN32) && (!defined(Q_OS_MAC) || defined(MACOSX_USE_GLX)))
     dispConnection = new Aspect_DisplayConnection(std::getenv("DISPLAY"));
 #endif
-    Handle_Graphic3d_GraphicDriver gpxDriver = new OpenGl_GraphicDriver(dispConnection);
-    Handle_V3d_Viewer viewer = new V3d_Viewer(gpxDriver);
+    Handle_Graphic3d_GraphicDriver gfxDriver = new OpenGl_GraphicDriver(dispConnection);
+    Handle_V3d_Viewer viewer = new V3d_Viewer(gfxDriver);
     viewer->SetDefaultViewSize(1000.);
     viewer->SetDefaultViewProj(V3d_XposYnegZpos);
     viewer->SetComputedMode(true);
